@@ -4,6 +4,8 @@
 "*" return MUL;
 "/" return DIV;
 "\n" return NL;
+"(" return BS;
+")" return BE;
 
 ([1-9][0-9]*)|0|([0-9]+\.[0-9]*) {
   double temp;

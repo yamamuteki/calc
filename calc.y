@@ -21,8 +21,10 @@ yywrap(void)
 }
 
 %type <double_value> expr
+%type <double_value> term
+%type <double_value> fact
 %token <double_value> NUM
-%token ADD SUB MUL DIV NL
+%token ADD SUB MUL DIV NL BS BE
 
 %%
 
@@ -36,23 +38,33 @@ statement : expr NL
             }
           ;
 
-expr : NUM
-     | expr ADD NUM
+expr : term
+     | expr ADD term
        {
          $$ = $1 + $3;
        }
-     | expr SUB NUM
+     | expr SUB term
        {
          $$ = $1 - $3;
        }
-     | expr MUL NUM
+     ;
+
+term : fact
+     | term MUL fact
        {
          $$ = $1 * $3;
        }
-     | expr DIV NUM
+     | term DIV fact
        {
          $$ = $1 / $3;
        }
+     ;
+
+fact : NUM
+     | BS expr BE
+      {
+        $$ = $2;
+      }
      ;
 %%
 
