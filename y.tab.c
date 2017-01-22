@@ -69,8 +69,7 @@
 static void
 yyerror(const char *s)
 {
-  fputs(s, stderr);
-  fputs("\n", stderr);
+  fprintf(stderr, "%s\n", s);
 }
 
 static int
@@ -80,7 +79,7 @@ yywrap(void)
 }
 
 
-#line 84 "y.tab.c" /* yacc.c:339  */
+#line 83 "y.tab.c" /* yacc.c:339  */
 
 # ifndef YY_NULLPTR
 #  if defined __cplusplus && 201103L <= __cplusplus
@@ -137,11 +136,11 @@ extern int yydebug;
 
 union YYSTYPE
 {
-#line 19 "calc.y" /* yacc.c:355  */
+#line 18 "calc.y" /* yacc.c:355  */
 
   double double_value;
 
-#line 145 "y.tab.c" /* yacc.c:355  */
+#line 144 "y.tab.c" /* yacc.c:355  */
 };
 
 typedef union YYSTYPE YYSTYPE;
@@ -158,7 +157,7 @@ int yyparse (void);
 
 /* Copy the second part of user declarations.  */
 
-#line 162 "y.tab.c" /* yacc.c:358  */
+#line 161 "y.tab.c" /* yacc.c:358  */
 
 #ifdef short
 # undef short
@@ -456,8 +455,8 @@ static const yytype_uint8 yytranslate[] =
   /* YYRLINE[YYN] -- Source line where rule number YYN was defined.  */
 static const yytype_uint8 yyrline[] =
 {
-       0,    31,    31,    32,    35,    41,    42,    46,    52,    53,
-      57,    63,    64
+       0,    30,    30,    31,    34,    40,    41,    45,    51,    52,
+      56,    62,    63
 };
 #endif
 
@@ -1234,55 +1233,55 @@ yyreduce:
   switch (yyn)
     {
         case 4:
-#line 36 "calc.y" /* yacc.c:1661  */
+#line 35 "calc.y" /* yacc.c:1661  */
     {
               fprintf(stdout, "%g\n", (yyvsp[-1].double_value));
             }
-#line 1242 "y.tab.c" /* yacc.c:1661  */
+#line 1241 "y.tab.c" /* yacc.c:1661  */
     break;
 
   case 6:
-#line 43 "calc.y" /* yacc.c:1661  */
+#line 42 "calc.y" /* yacc.c:1661  */
     {
          (yyval.double_value) = (yyvsp[-2].double_value) + (yyvsp[0].double_value);
        }
-#line 1250 "y.tab.c" /* yacc.c:1661  */
+#line 1249 "y.tab.c" /* yacc.c:1661  */
     break;
 
   case 7:
-#line 47 "calc.y" /* yacc.c:1661  */
+#line 46 "calc.y" /* yacc.c:1661  */
     {
          (yyval.double_value) = (yyvsp[-2].double_value) - (yyvsp[0].double_value);
        }
-#line 1258 "y.tab.c" /* yacc.c:1661  */
+#line 1257 "y.tab.c" /* yacc.c:1661  */
     break;
 
   case 9:
-#line 54 "calc.y" /* yacc.c:1661  */
+#line 53 "calc.y" /* yacc.c:1661  */
     {
          (yyval.double_value) = (yyvsp[-2].double_value) * (yyvsp[0].double_value);
        }
-#line 1266 "y.tab.c" /* yacc.c:1661  */
+#line 1265 "y.tab.c" /* yacc.c:1661  */
     break;
 
   case 10:
-#line 58 "calc.y" /* yacc.c:1661  */
+#line 57 "calc.y" /* yacc.c:1661  */
     {
          (yyval.double_value) = (yyvsp[-2].double_value) / (yyvsp[0].double_value);
        }
-#line 1274 "y.tab.c" /* yacc.c:1661  */
+#line 1273 "y.tab.c" /* yacc.c:1661  */
     break;
 
   case 12:
-#line 65 "calc.y" /* yacc.c:1661  */
+#line 64 "calc.y" /* yacc.c:1661  */
     {
         (yyval.double_value) = (yyvsp[-1].double_value);
       }
-#line 1282 "y.tab.c" /* yacc.c:1661  */
+#line 1281 "y.tab.c" /* yacc.c:1661  */
     break;
 
 
-#line 1286 "y.tab.c" /* yacc.c:1661  */
+#line 1285 "y.tab.c" /* yacc.c:1661  */
       default: break;
     }
   /* User semantic actions sometimes alter yychar, and that requires
@@ -1510,7 +1509,7 @@ yyreturn:
 #endif
   return yyresult;
 }
-#line 69 "calc.y" /* yacc.c:1906  */
+#line 68 "calc.y" /* yacc.c:1906  */
 
 
 #include "lex.yy.c"

@@ -765,20 +765,18 @@ case 8:
 YY_RULE_SETUP
 #line 10 "calc.l"
 {
-  double temp;
-  sscanf(yytext, "%lf", &temp);
-  yylval.double_value = temp;
+  yylval.double_value = atof(yytext);
   return NUM;
 };
 	YY_BREAK
 case 9:
 YY_RULE_SETUP
-#line 17 "calc.l"
+#line 15 "calc.l"
 ;
 	YY_BREAK
 case 10:
 YY_RULE_SETUP
-#line 19 "calc.l"
+#line 17 "calc.l"
 {
   fprintf(stderr, "lexical error.\n");
   exit(1);
@@ -786,10 +784,10 @@ YY_RULE_SETUP
 	YY_BREAK
 case 11:
 YY_RULE_SETUP
-#line 23 "calc.l"
+#line 21 "calc.l"
 ECHO;
 	YY_BREAK
-#line 793 "lex.yy.c"
+#line 791 "lex.yy.c"
 case YY_STATE_EOF(INITIAL):
 	yyterminate();
 
@@ -1786,7 +1784,7 @@ void yyfree (void * ptr )
 
 #define YYTABLES_NAME "yytables"
 
-#line 23 "calc.l"
+#line 21 "calc.l"
 
 
 

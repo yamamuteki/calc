@@ -4,8 +4,7 @@
 static void
 yyerror(const char *s)
 {
-  fputs(s, stderr);
-  fputs("\n", stderr);
+  fprintf(stderr, "%s\n", s);
 }
 
 static int
