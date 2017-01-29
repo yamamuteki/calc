@@ -13,6 +13,8 @@ yywrap(void)
   return 1;
 }
 
+int yylex();
+
 %}
 
 %union {
